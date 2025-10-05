@@ -94,13 +94,13 @@ export default function Page() {
             About Me
           </span>
           <div className="mb-20" />
-          <div className="mx-auto max-w-4xl flex items-center gap-12 text-white px-4 py-12">
+          <div className="mx-auto max-w-4xl flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 text-white px-4 py-12 text-center md:text-left">
             <img
               src="foto.jpg"
               alt="profil"
-              className="w-100 h-100 rounded-xl object-cover border-2 border-white shadow-xl"
+              className="w-40 h-40 md:w-72 md:h-72 rounded-xl object-cover border-2 border-white shadow-xl"
             />
-            <div className="flex-1 flex flex-col items-start text-left space-y-6">
+            <div className="flex-1 flex flex-col items-center md:items-start space-y-6">
               <p className="text-2xl md:text-4xl font-bold">
                 HI, I&apos;m Yesthon de Haan!
               </p>
@@ -137,7 +137,7 @@ export default function Page() {
         <p className="text-zinc-400 max-w-2xl mx-auto">
           I&apos;m open to collaboration, freelance projects, and new opportunities. Feel free to reach out!
         </p>
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-3 md:gap-4 flex-wrap">
           <a
             href="mailto:yestondehaan607@gmail.com"
             className="px-5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition-colors text-white"
