@@ -1,103 +1,169 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React from "react";
+import { motion } from "motion/react";
+import { AuroraBackground } from "./components/aurora-background";
+import { CometCard } from "./components/comet-card";
+import { TextGenerateEffect } from "./components/text-generate-effect";
+import { MacbookScroll } from "./components/macbook-scroll";
+import { BackgroundLines } from "./components/background-lines";
+import { HoverEffect } from "./components/card-hover-effect";
+import { FaLinkedin } from "react-icons/fa6"; 
+import { FaGithub } from "react-icons/fa";
+import { MdAlternateEmail } from "react-icons/md";
+
+const words = `I am a developer who builds efficient, responsive web and mobile applications using technologies such as React, Next.js, Laravel, and Golang.
+`;
+
+const projects = [
+  {
+    title: "School",
+    description:
+      "SMA Kristen Mercusuar Kupang",
+    link: "#",
+  },
+  {
+    title: "University",
+    description:
+      "University Bina Nusantara (current)",
+    link: "1",
+  },
+  {
+    title: "Skills",
+    description:
+      ["React.js","Next.js","Laravel","Golang","Mysql","Tailwind","Github"],
+    link: "2",
+  },
+];
+
+export default function Page() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <div className="w-full flex flex-col">
+      {/* SECTION 1 - HERO PROFILE */}
+      <AuroraBackground className="pb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="relative flex flex-col gap-4 items-center justify-center px-4"
+        >
+          <CometCard>
+            <img
+              loading="lazy"
+              className="rounded-[12px] object-cover w-full md:w-72 md:h-54 aspect-[4/3]"
+              alt="Invite background"
+              src="/foto.jpg"
+              style={{
+                boxShadow: "rgba(0, 0, 0, 0.05) 0px 3px 4px 0px",
+                opacity: 1,
+              }}
             />
-            Deploy now
+          </CometCard>
+          <div className="text-3xl md:text-5xl font-bold dark:text-white text-center">
+            Hello I'm Fullstack Developer
+          </div>
+          <TextGenerateEffect words={words} />
+          <div className="flex flex-row gap-4 w-full justify-center items-center mt-4">
+            <img src="/js.png" alt="logo js" className="w-13 h-13 object-contain" />
+            <img src="/css-3.png" alt="logo css" className="w-13 h-13 object-contain" />
+            <img src="/html-5.png" alt="logo html" className="w-13 h-13 object-contain" />
+            <img src="/atom.png" alt="logo atom" className="w-13 h-13 object-contain" />
+            <img src="/Go-Logo_Blue.png" alt="logo go" className="w-13 h-13 object-contain" />
+          </div>
+        </motion.div>
+      </AuroraBackground>
+
+      {/* SECTION 2 - ABOUT ME */}
+      <div className="flex flex-col overflow-hidden bg-zinc-900 text-slate-950 dark:bg-zinc-900">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="relative flex flex-col gap-4 items-center justify-center px-4 pt-20"
+        >
+          <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
+          <span className="text-4xl md:text-[5rem] font-bold mt-1 leading-none text-white flex justify-center w-full text-center">
+            About Me
+          </span>
+          <div className="mb-20" />
+          <div className="mx-auto max-w-4xl flex items-center gap-12 text-white px-4 py-12">
+            <img
+              src="foto.jpg"
+              alt="profil"
+              className="w-100 h-100 rounded-xl object-cover border-2 border-white shadow-xl"
+            />
+            <div className="flex-1 flex flex-col items-start text-left space-y-6">
+              <p className="text-2xl md:text-4xl font-bold">
+                HI, I'm Yesthon de Haan!
+              </p>
+              <p className="text-md md:text-2xl text-gray-300">
+                Saya merupakan mahasiswa Bina Nusantara Malang yang berfokus pada bidang full stack development. 
+                Saya memiliki pengalaman dalam mengembangkan aplikasi web dan mobile yang efisien dan responsif menggunakan berbagai teknologi seperti React, Next.js, laravel, dan juga Golang.
+              </p>
+            </div>
+          </div>
+          </BackgroundLines>
+        </motion.div>
+
+        {/* SECTION 3 - FEATURES / CONTENT */}
+        <main className="flex flex-col overflow-hidden bg-zinc-900 text-white dark:bg-zinc-900">
+      <MacbookScroll
+        title="My Project"
+        src="/myproject.png"
+        showGradient={true}
+        badge={<span className="px-2 py-1 text-1xl bg-blue-500 text-white rounded">Rocket</span>}
+      />
+    </main>
+    {/* SECTION 4 - EDUCATION/SKILLS/EXPERIENCE */} 
+      <span className="text-3xl md:text-[5rem] font-bold mt-1 leading-none text-white flex justify-center w-full text-center">
+        Education & Skills
+      </span>
+      <div className="mb-10" />
+    <div className="max-w-5xl mx-auto px-8">
+      <HoverEffect items={projects} />
+    </div>
+    {/* SECTION 5 - FOOTER */}
+    <footer className="w-full bg-zinc-900 text-white">
+      <div className="max-w-5xl mx-auto px-8 py-14 text-center space-y-6">
+        <h2 className="text-3xl md:text-5xl font-bold">Let's Contact Me</h2>
+        <p className="text-zinc-400 max-w-2xl mx-auto">
+          I'm open to collaboration, freelance projects, and new opportunities. Feel free to reach out!
+        </p>
+        <div className="flex items-center justify-center gap-4">
+          <a
+            href="mailto:yestondehaan607@gmail.com"
+            className="px-5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition-colors text-white"
+          >
+          <MdAlternateEmail />
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/Yesthon31"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
+            className="px-5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition-colors"
           >
-            Read our docs
+          <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yesthon-b-de-haan-89177a373/"
+            target="_blank"
+            rel="noreferrer"
+            className="px-5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 transition-colors"
+          >
+            <FaLinkedin />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+    </footer>
+      </div>
     </div>
   );
 }
