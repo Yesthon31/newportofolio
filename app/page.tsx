@@ -64,7 +64,7 @@ export default function Page() {
             />
           </CometCard>
           <div className="text-3xl md:text-5xl font-bold dark:text-white text-center">
-            Hello I'm Fullstack Developer
+            Hello I&apos;m Fullstack Developer
           </div>
           <TextGenerateEffect words={words} />
           <div className="flex flex-row gap-4 w-full justify-center items-center mt-4">
@@ -102,7 +102,7 @@ export default function Page() {
             />
             <div className="flex-1 flex flex-col items-start text-left space-y-6">
               <p className="text-2xl md:text-4xl font-bold">
-                HI, I'm Yesthon de Haan!
+                HI, I&apos;m Yesthon de Haan!
               </p>
               <p className="text-md md:text-2xl text-gray-300">
                 Saya merupakan mahasiswa Bina Nusantara Malang yang berfokus pada bidang full stack development. 
@@ -133,9 +133,9 @@ export default function Page() {
     {/* SECTION 5 - FOOTER */}
     <footer className="w-full bg-zinc-900 text-white">
       <div className="max-w-5xl mx-auto px-8 py-14 text-center space-y-6">
-        <h2 className="text-3xl md:text-5xl font-bold">Let's Contact Me</h2>
+        <h2 className="text-3xl md:text-5xl font-bold">Let&apos;s Contact Me</h2>
         <p className="text-zinc-400 max-w-2xl mx-auto">
-          I'm open to collaboration, freelance projects, and new opportunities. Feel free to reach out!
+          I&apos;m open to collaboration, freelance projects, and new opportunities. Feel free to reach out!
         </p>
         <div className="flex items-center justify-center gap-4">
           <a
