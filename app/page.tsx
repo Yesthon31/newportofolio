@@ -11,6 +11,7 @@ import { HoverEffect } from "./components/card-hover-effect";
 import { FaLinkedin } from "react-icons/fa6"; 
 import { FaGithub } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import Button from "./components/Button";
 
 const words = `I am a developer who builds efficient, responsive web and mobile applications using technologies such as React, Next.js, Laravel, and Golang.
 `;
@@ -108,6 +109,7 @@ export default function Page() {
                 Saya merupakan mahasiswa Bina Nusantara Malang yang berfokus pada bidang full stack development. 
                 Saya memiliki pengalaman dalam mengembangkan aplikasi web dan mobile yang efisien dan responsif menggunakan berbagai teknologi seperti React, Next.js, laravel, dan juga Golang.
               </p>
+              <Button />
             </div>
           </div>
           </BackgroundLines>
