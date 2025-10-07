@@ -5,10 +5,11 @@ import styled from "styled-components";
 
 const Button = () => {
   const handleDownload = () => {
-    const fileUrl = "/myCV.pdf"; // file di folder /public
+    // Ganti URL di bawah dengan path file kamu (misal file di folder public)
+    const fileUrl = "/sample.pdf"; // contoh: file sample.pdf di folder /public
     const link = document.createElement("a");
     link.href = fileUrl;
-    link.download = "Yesthon-cv.pdf";
+    link.download = "my-file.pdf"; // nama file hasil download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
